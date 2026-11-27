@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nippon Stat Atlas — Japan's national statistics at a glance</title>
+<meta name="description" content="An independent atlas of Japan's national statistics: population, economy, jobs, prices and all 47 prefectures, with sources and years on every figure.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/index.html"><span class="mark">N</span>Nippon Stat Atlas</a>
+    <span class="tagline">Japan's national statistics, in one place — independent, sourced, up to date</span>
+  </div>
+  <nav class="main-nav" aria-label="Sections">
+    <a class="active" href="/index.html" aria-current="page">Overview</a>
+    <a href="/population.html">Population</a>
+    <a href="/economy.html">Economy</a>
+    <a href="/labour.html">Labour</a>
+    <a href="/prices.html">Prices</a>
+    <a href="/regions.html">Regions</a>
+    <a href="/methodology.html">Sources &amp; method</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <h1>Japan at a glance</h1>
+    <p class="lede">The headline numbers for Japan — population, output, jobs and prices — with the year and the source on every figure. Pick a year to see how the country has moved.</p>
+  </div>
+
+  <div class="controls">
+    <label for="year-select">Year</label>
+    <select id="year-select" aria-label="Year"></select>
+    <span id="year-note" class="source-note"></span>
+  </div>
+
+  <section class="grid kpi" aria-label="Headline indicators">
+    <div class="card kpi-card" data-kpi="population">
+      <div class="value"></div>
+      <div class="label">Total population</div>
+      <div class="delta"></div>
+      <div class="src">Statistics Bureau, Population Estimates</div>
+    </div>
+    <div class="card kpi-card" data-kpi="gdp">
+      <div class="value"></div>
+      <div class="label">Nominal GDP</div>
+      <div class="delta"></div>
+      <div class="src">Cabinet Office, National Accounts</div>
+    </div>
+    <div class="card kpi-card" data-kpi="unemployment">
+      <div class="value"></div>
+      <div class="label">Unemployment rate</div>
+      <div class="delta"></div>
+      <div class="src">Statistics Bureau, Labour Force Survey</div>
+    </div>
+    <div class="card kpi-card" data-kpi="cpi">
+      <div class="value"></div>
+      <div class="label">Consumer prices</div>
+      <div class="delta"></div>
+      <div class="src">Statistics Bureau, Consumer Price Index</div>
+    </div>
+  </section>
+
+  <section class="grid two-wide" style="margin-top: 16px;">
+    <div class="card">
+      <h2>Population is shrinking — slowly</h2>
+      <p class="sub">Total population, 2019–2025, millions. Source: Statistics Bureau of Japan, Population Estimates (1 Oct each year).</p>
+      <canvas id="pop-chart" class="chart" aria-label="Line chart of Japan's population, 2019 to 2025"></canvas>
+      <div class="callout">
+        <p><strong>What to take from this:</strong> Japan lost about 2.4 million people between 2019 and 2025. The working-age population is falling faster than the total, which is why the age structure on the <a href="/population.html">Population</a> page matters more than the headline.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Key facts, 2025</h2>
+      <p class="sub">The numbers people ask for first.</p>
+      <ul class="facts">
+        <li><span class="k">Median age</span><span class="v">49.5 years</span></li>
+        <li><span class="k">Share aged 65+</span><span class="v">29.1%</span></li>
+        <li><span class="k">Fertility rate (2024)</span><span class="v">1.15</span></li>
+        <li><span class="k">Life expectancy</span><span class="v">84.0 years</span></li>
+        <li><span class="k">Births (2024)</span><span class="v">720,988</span></li>
+        <li><span class="k">Deaths (2024)</span><span class="v">1,605,298</span></li>
+        <li><span class="k">Labour force</span><span class="v">69.3 million</span></li>
+        <li><span class="k">Exports (2024)</span><span class="v">¥107.9 trillion</span></li>
+      </ul>
+      <p class="source-note">Sources: Statistics Bureau of Japan; Ministry of Health, Labour and Welfare; Ministry of Finance. See <a href="/methodology.html">Sources &amp; method</a>.</p>
+    </div>
+  </section>
+
+  <section class="grid two" style="margin-top: 16px;">
+    <div class="card">
+      <h2>Economy: growth and prices together</h2>
+      <p class="sub">Real GDP growth and CPI inflation, 2019–2025, %. Sources: Cabinet Office; Statistics Bureau.</p>
+      <canvas id="growth-chart" class="chart short" aria-label="Line chart of real GDP growth and CPI inflation, 2019 to 2025"></canvas>
+    </div>
+    <div class="card">
+      <h2>Where to go next</h2>
+      <p class="sub">Every section is a full page with its own charts and tables.</p>
+      <ul class="facts">
+        <li><span class="k"><a href="/population.html">Population</a></span><span class="v">Age structure &amp; trend</span></li>
+        <li><span class="k"><a href="/economy.html">Economy</a></span><span class="v">GDP, trade &amp; partners</span></li>
+        <li><span class="k"><a href="/labour.html">Labour</a></span><span class="v">Jobs, wages &amp; openings</span></li>
+        <li><span class="k"><a href="/prices.html">Prices</a></span><span class="v">Inflation, food &amp; energy</span></li>
+        <li><span class="k"><a href="/regions.html">Regions</a></span><span class="v">All 47 prefectures</span></li>
+      </ul>
+      <p class="source-note">This atlas is an independent project. It is not affiliated with any government agency; figures are quoted from the official sources named on each chart.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="/index.html">Overview</a><a href="/population.html">Population</a><a href="/economy.html">Economy</a>
+      <a href="/labour.html">Labour</a><a href="/prices.html">Prices</a><a href="/regions.html">Regions</a>
+      <a href="/methodology.html">Sources &amp; method</a>
+    </nav>
+    <p>Nippon Stat Atlas — an independent atlas of Japan's national statistics. Figures are the latest published values as of November 2026; each chart names its source and year. © <span id="footer-year">2026</span> Nippon Stat Atlas.</p>
+  </div>
+</footer>
+
+<script type="module" src="/app.js"></script>
+<script type="module">
+import { YEARS, SERIES } from './data.js';
+import { drawLineChart, CHART_COLORS } from './charts.js';
+const { BLUE, ACCENT } = CHART_COLORS;
+function draw() {
+  drawLineChart(document.querySelector('#pop-chart'), YEARS, [
+    { label: 'Population', values: SERIES.population.values, color: BLUE },
+  ], { unit: 'million people' });
+  drawLineChart(document.querySelector('#growth-chart'), YEARS, [
+    { label: 'Real GDP growth', values: SERIES.gdpGrowth.values, color: BLUE },
+    { label: 'CPI inflation', values: SERIES.cpi.values, color: ACCENT },
+  ], { unit: '% per year', zeroBaseline: true });
+}
+draw();
+window.addEventListener('resize', draw);
+</script>
+</body>
+</html>

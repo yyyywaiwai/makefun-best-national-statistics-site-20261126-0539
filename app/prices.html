@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prices — Nippon Stat Atlas</title>
+<meta name="description" content="Japan's prices: CPI inflation, core inflation, food and energy prices, with sources and years.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/index.html"><span class="mark">N</span>Nippon Stat Atlas</a>
+    <span class="tagline">Japan's national statistics, in one place — independent, sourced, up to date</span>
+  </div>
+  <nav class="main-nav" aria-label="Sections">
+    <a href="/index.html">Overview</a>
+    <a href="/population.html">Population</a>
+    <a href="/economy.html">Economy</a>
+    <a href="/labour.html">Labour</a>
+    <a class="active" href="/prices.html" aria-current="page">Prices</a>
+    <a href="/regions.html">Regions</a>
+    <a href="/methodology.html">Sources &amp; method</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <h1>Prices &amp; inflation</h1>
+    <p class="lede">After decades of near-zero inflation, Japan's consumer prices have risen more than 2% a year since 2022. Food is the pressure point: rice prices roughly doubled in 2025 after a poor harvest and tight supply.</p>
+  </div>
+
+  <section class="grid kpi" aria-label="Price headline figures">
+    <div class="card kpi-card">
+      <div class="value">3.2 <small>%</small></div>
+      <div class="label">CPI inflation, 2025 average</div>
+      <div class="delta down">Above the 2% target for a 4th year</div>
+      <div class="src">Statistics Bureau, Consumer Price Index</div>
+    </div>
+    <div class="card kpi-card">
+      <div class="value">3.0 <small>%</small></div>
+      <div class="label">Core-core inflation, 2025</div>
+      <div class="delta down">Excl. fresh food and energy</div>
+      <div class="src">Statistics Bureau, Consumer Price Index</div>
+    </div>
+    <div class="card kpi-card">
+      <div class="value">+7.1 <small>%</small></div>
+      <div class="label">Food prices, 2025</div>
+      <div class="delta down">Fastest-rising category</div>
+      <div class="src">Statistics Bureau, Consumer Price Index</div>
+    </div>
+    <div class="card kpi-card">
+      <div class="value">0.75 <small>%</small></div>
+      <div class="label">Bank of Japan policy rate</div>
+      <div class="delta up">Raised from −0.1% since Mar 2024</div>
+      <div class="src">Bank of Japan</div>
+    </div>
+  </section>
+
+  <section class="grid two-wide" style="margin-top: 16px;">
+    <div class="card">
+      <h2>Inflation, 2019–2025</h2>
+      <p class="sub">Consumer prices, % change on the previous year. Source: Statistics Bureau of Japan, Consumer Price Index (2020 base).</p>
+      <canvas id="cpi-chart" class="chart" aria-label="Line chart of CPI inflation and core-core inflation, 2019 to 2025"></canvas>
+      <div class="callout">
+        <p><strong>The break with deflation.</strong> Japan spent the 2010s with inflation near zero. The 2022–2023 surge came from energy and import costs after the yen fell; by 2024–2025 the driver had shifted to food and services, with wages finally rising to match.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h2>What got more expensive, 2025</h2>
+      <p class="sub">CPI by category, % change on the previous year. Source: Statistics Bureau, Consumer Price Index 2025.</p>
+      <canvas id="category-chart" class="chart" aria-label="Horizontal bar chart of CPI by category, 2025"></canvas>
+      <ul class="legend">
+        <li><span class="swatch" style="background:#c0392b"></span>Rice alone rose about 90% year on year in mid-2025, the largest jump in five decades.</li>
+        <li><span class="swatch" style="background:#1f5fa8"></span>Energy prices were held down by government subsidies through 2025.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top: 16px;">
+    <h2>How to read the CPI</h2>
+    <p>The Consumer Price Index tracks the prices of about 580 goods and services bought by households, weighted by what people actually spend. <strong>Core</strong> CPI leaves out fresh food, whose prices swing with the weather. <strong>Core-core</strong> also leaves out energy. The Bank of Japan targets 2% on the core-core measure, and watches it together with wages: inflation only sticks if pay rises with it. That is why the 2025 wage round — the biggest in 34 years — matters as much as any price index on this page. See <a href="/labour.html">Labour</a> for the wage figures.</p>
+    <p class="source-note">Index base year 2020 = 100. Figures are annual averages; the latest monthly values are published around the 20th of each month by the Statistics Bureau.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="/index.html">Overview</a><a href="/population.html">Population</a><a href="/economy.html">Economy</a>
+      <a href="/labour.html">Labour</a><a href="/prices.html">Prices</a><a href="/regions.html">Regions</a>
+      <a href="/methodology.html">Sources &amp; method</a>
+    </nav>
+    <p>Nippon Stat Atlas — an independent atlas of Japan's national statistics. Figures are the latest published values as of November 2026; each chart names its source and year. © <span id="footer-year">2026</span> Nippon Stat Atlas.</p>
+  </div>
+</footer>
+
+<script type="module" src="/app.js"></script>
+<script type="module">
+import { YEARS, SERIES } from './data.js';
+import { drawLineChart, drawHBarChart, CHART_COLORS } from './charts.js';
+const { BLUE, ACCENT, TEAL, AMBER } = CHART_COLORS;
+function drawCpi() {
+  drawLineChart(document.querySelector('#cpi-chart'), YEARS, [
+    { label: 'CPI, all items', values: SERIES.cpi.values, color: BLUE },
+    { label: 'Core-core', values: SERIES.cpiCore.values, color: ACCENT },
+  ], { unit: '% change on previous year', zeroBaseline: true });
+}
+function drawCategories() {
+  drawHBarChart(document.querySelector('#category-chart'), [
+    { label: 'Food', value: 7.1, color: ACCENT },
+    { label: 'Rice', value: 89.0, color: ACCENT },
+    { label: 'Services', value: 1.8, color: BLUE },
+    { label: 'Housing', value: 0.9, color: TEAL },
+    { label: 'Energy', value: -0.6, color: AMBER },
+    { label: 'Clothing', value: 2.2, color: BLUE },
+  ], { suffix: '%' });
+}
+drawCpi();
+drawCategories();
+window.addEventListener('resize', () => { drawCpi(); drawCategories(); });
+</script>
+</body>
+</html>

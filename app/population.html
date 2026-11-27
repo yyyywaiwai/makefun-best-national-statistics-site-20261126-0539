@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Population — Nippon Stat Atlas</title>
+<meta name="description" content="Japan's population: the shrinking total, the age structure, births and deaths, and the fertility rate, with sources and years.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/index.html"><span class="mark">N</span>Nippon Stat Atlas</a>
+    <span class="tagline">Japan's national statistics, in one place — independent, sourced, up to date</span>
+  </div>
+  <nav class="main-nav" aria-label="Sections">
+    <a href="/index.html">Overview</a>
+    <a class="active" href="/population.html" aria-current="page">Population</a>
+    <a href="/economy.html">Economy</a>
+    <a href="/labour.html">Labour</a>
+    <a href="/prices.html">Prices</a>
+    <a href="/regions.html">Regions</a>
+    <a href="/methodology.html">Sources &amp; method</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <h1>Population &amp; demographics</h1>
+    <p class="lede">Japan's population peaked at 128.1 million in 2008 and has fallen every year since. The story is not just the total — it is who is left: fewer children, more people over 75.</p>
+  </div>
+
+  <section class="grid kpi" aria-label="Demographic headline figures">
+    <div class="card kpi-card">
+      <div class="value">123.7 <small>million</small></div>
+      <div class="label">Total population, 1 Oct 2025</div>
+      <div class="delta down">−0.2% on 2024</div>
+      <div class="src">Statistics Bureau, Population Estimates</div>
+    </div>
+    <div class="card kpi-card">
+      <div class="value">29.1 <small>%</small></div>
+      <div class="label">Aged 65 and over</div>
+      <div class="delta down">Highest share in the world</div>
+      <div class="src">Statistics Bureau, Population Estimates</div>
+    </div>
+    <div class="card kpi-card">
+      <div class="value">1.15</div>
+      <div class="label">Total fertility rate, 2024</div>
+      <div class="delta down">Lowest on record</div>
+      <div class="src">Ministry of Health, Labour and Welfare</div>
+    </div>
+    <div class="card kpi-card">
+      <div class="value">49.5 <small>years</small></div>
+      <div class="label">Median age, 2025</div>
+      <div class="delta down">Up from 46.9 in 2015</div>
+      <div class="src">Statistics Bureau, Population Estimates</div>
+    </div>
+  </section>
+
+  <section data-tabs style="margin-top: 16px;">
+    <div class="controls">
+      <div class="tabs" role="group" aria-label="Population views">
+        <button type="button" data-panel="trend" aria-pressed="true">Population trend</button>
+        <button type="button" data-panel="age" aria-pressed="false">Age structure</button>
+        <button type="button" data-panel="balance" aria-pressed="false">Births &amp; deaths</button>
+      </div>
+    </div>
+
+    <div class="card" data-panel-body="trend">
+      <h2>Population trend, 2019–2025</h2>
+      <p class="sub">Total population, millions. Source: Statistics Bureau of Japan, Population Estimates (1 Oct each year).</p>
+      <canvas id="trend-chart" class="chart" aria-label="Line chart of Japan's population, 2019 to 2025"></canvas>
+      <p class="source-note">The decline is steady at roughly 500,000–800,000 people a year, driven by deaths exceeding births by about 880,000 in 2024.</p>
+    </div>
+
+    <div class="card" data-panel-body="age" hidden>
+      <h2>Age structure, 2025</h2>
+      <p class="sub">Population by age group, millions. Source: Statistics Bureau of Japan, Population Estimates (1 Oct 2025).</p>
+      <canvas id="age-chart" class="chart" aria-label="Bar chart of Japan's population by age group, 2025"></canvas>
+      <div class="grid two" style="margin-top: 12px;">
+        <div>
+          <ul class="facts">
+            <li><span class="k">Children (0–14)</span><span class="v">13.9m · 11.2%</span></li>
+            <li><span class="k">Working age (15–64)</span><span class="v">73.8m · 59.6%</span></li>
+            <li><span class="k">Aged 65+</span><span class="v">36.0m · 29.1%</span></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="facts">
+            <li><span class="k">Aged 75+</span><span class="v">19.4m · 15.7%</span></li>
+            <li><span class="k">Old-age dependency ratio</span><span class="v">48.8 per 100 workers</span></li>
+            <li><span class="k">Children per 100 elderly</span><span class="v">38.6</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-panel-body="balance" hidden>
+      <h2>Births and deaths, 2024</h2>
+      <p class="sub">Source: Ministry of Health, Labour and Welfare, Vital Statistics 2024.</p>
+      <canvas id="balance-chart" class="chart short" aria-label="Bar chart comparing births and deaths in Japan, 2024"></canvas>
+      <div class="callout">
+        <p><strong>Natural decrease of 884,310 people in 2024.</strong> Births fell to 720,988 — the lowest since records began — while deaths reached 1,605,298. Net migration (about +340,000) offsets only part of the gap.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top: 16px;">
+    <h2>What the numbers mean</h2>
+    <p>Japan is the world's oldest large country and its fastest-shrinking one among major economies. The working-age population has fallen from 87 million in 1995 to under 74 million today, which is why labour shortages, pension costs and regional depopulation dominate policy debate. The prefecture picture is uneven: Tokyo still grows slightly, while Akita loses over 1% of its people a year — see the <a href="/regions.html">Regions</a> page.</p>
+    <p class="source-note">Figures are rounded for display. Full definitions and links to the original releases are on the <a href="/methodology.html">Sources &amp; method</a> page.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="/index.html">Overview</a><a href="/population.html">Population</a><a href="/economy.html">Economy</a>
+      <a href="/labour.html">Labour</a><a href="/prices.html">Prices</a><a href="/regions.html">Regions</a>
+      <a href="/methodology.html">Sources &amp; method</a>
+    </nav>
+    <p>Nippon Stat Atlas — an independent atlas of Japan's national statistics. Figures are the latest published values as of November 2026; each chart names its source and year. © <span id="footer-year">2026</span> Nippon Stat Atlas.</p>
+  </div>
+</footer>
+
+<script type="module" src="/app.js"></script>
+<script type="module">
+import { YEARS, SERIES, AGE_GROUPS } from './data.js';
+import { drawLineChart, drawBarChart, CHART_COLORS } from './charts.js';
+const { BLUE, ACCENT, TEAL } = CHART_COLORS;
+function drawTrend() {
+  drawLineChart(document.querySelector('#trend-chart'), YEARS, [
+    { label: 'Population', values: SERIES.population.values, color: BLUE },
+  ], { unit: 'million people' });
+}
+function drawAge() {
+  drawBarChart(document.querySelector('#age-chart'), AGE_GROUPS.map((d, i) => ({
+    label: d.group, value: d.value, color: i >= 6 ? ACCENT : BLUE,
+  })), { unit: 'million people' });
+}
+function drawBalance() {
+  drawBarChart(document.querySelector('#balance-chart'), [
+    { label: 'Births', value: 0.72, color: TEAL },
+    { label: 'Deaths', value: 1.61, color: ACCENT },
+  ], { unit: 'million people, 2024' });
+}
+drawTrend();
+drawAge();
+drawBalance();
+document.querySelector('[data-panel-body="age"]').addEventListener('panel-shown', drawAge);
+document.querySelector('[data-panel-body="balance"]').addEventListener('panel-shown', drawBalance);
+window.addEventListener('resize', () => { drawTrend(); drawAge(); drawBalance(); });
+</script>
+</body>
+</html>

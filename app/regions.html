@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regions — Nippon Stat Atlas</title>
+<meta name="description" content="All 47 prefectures compared: population, change, GDP per capita and unemployment, in a sortable table with region filter and search.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/index.html"><span class="mark">N</span>Nippon Stat Atlas</a>
+    <span class="tagline">Japan's national statistics, in one place — independent, sourced, up to date</span>
+  </div>
+  <nav class="main-nav" aria-label="Sections">
+    <a href="/index.html">Overview</a>
+    <a href="/population.html">Population</a>
+    <a href="/economy.html">Economy</a>
+    <a href="/labour.html">Labour</a>
+    <a href="/prices.html">Prices</a>
+    <a class="active" href="/regions.html" aria-current="page">Regions</a>
+    <a href="/methodology.html">Sources &amp; method</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <h1>Regions: all 47 prefectures</h1>
+    <p class="lede">Japan's regions are moving in opposite directions. Tokyo is the only prefecture still growing; 46 of 47 shrank in 2024, and the gap in income per person between Tokyo and the poorest prefecture is nearly three to one.</p>
+  </div>
+
+  <section class="grid kpi" aria-label="Regional headline figures">
+    <div class="card kpi-card">
+      <div class="value">14.18 <small>million</small></div>
+      <div class="label">Tokyo — largest prefecture</div>
+      <div class="delta up">11.5% of Japan's people</div>
+      <div class="src">Statistics Bureau, Population Estimates 2024</div>
+    </div>
+    <div class="card kpi-card">
+      <div class="value">0.54 <small>million</small></div>
+      <div class="label">Tottori — smallest prefecture</div>
+      <div class="delta down">−1.0% on 2023</div>
+      <div class="src">Statistics Bureau, Population Estimates 2024</div>
+    </div>
+    <div class="card kpi-card">
+      <div class="value">¥8.5 <small>million</small></div>
+      <div class="label">Tokyo GDP per capita, 2022</div>
+      <div class="delta up">2.8× Okinawa's ¥3.0m</div>
+      <div class="src">Cabinet Office, Prefectural Accounts</div>
+    </div>
+    <div class="card kpi-card">
+      <div class="value">46 <small>of 47</small></div>
+      <div class="label">Prefectures shrinking in 2024</div>
+      <div class="delta down">Only Tokyo grew</div>
+      <div class="src">Statistics Bureau, Population Estimates 2024</div>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top: 16px;">
+    <h2>Compare the prefectures</h2>
+    <p class="sub">Click any column heading to sort. Population is 1 Oct 2024, thousands; change is on the previous year; GDP per capita is 2022; unemployment is the 2024 model-based estimate. Sources: Statistics Bureau of Japan; Cabinet Office.</p>
+    <div class="controls">
+      <label for="region-select">Region</label>
+      <select id="region-select" aria-label="Region filter"></select>
+      <label for="pref-search">Search</label>
+      <input type="search" id="pref-search" placeholder="e.g. Hokkaido" aria-label="Search prefectures">
+      <span id="pref-count" class="source-note"></span>
+    </div>
+    <div class="table-scroll">
+      <table class="data" id="pref-table">
+        <thead><tr></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="callout" style="margin-top: 16px;">
+      <p><strong>Why the gap matters:</strong> young people leave rural prefectures for Tokyo, Osaka and Nagoya, which shrinks the local tax base and leaves an older population behind — Akita's median age is over 55, Tokyo's is about 45. That is the regional story behind the national totals on the <a href="/population.html">Population</a> page.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="/index.html">Overview</a><a href="/population.html">Population</a><a href="/economy.html">Economy</a>
+      <a href="/labour.html">Labour</a><a href="/prices.html">Prices</a><a href="/regions.html">Regions</a>
+      <a href="/methodology.html">Sources &amp; method</a>
+    </nav>
+    <p>Nippon Stat Atlas — an independent atlas of Japan's national statistics. Figures are the latest published values as of November 2026; each chart names its source and year. © <span id="footer-year">2026</span> Nippon Stat Atlas.</p>
+  </div>
+</footer>
+
+<script type="module" src="/app.js"></script>
+</body>
+</html>

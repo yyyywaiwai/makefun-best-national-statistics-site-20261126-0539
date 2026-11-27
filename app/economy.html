@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Economy — Nippon Stat Atlas</title>
+<meta name="description" content="Japan's economy: nominal GDP, real growth, the composition of GDP, trade and export partners, with sources and years.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/index.html"><span class="mark">N</span>Nippon Stat Atlas</a>
+    <span class="tagline">Japan's national statistics, in one place — independent, sourced, up to date</span>
+  </div>
+  <nav class="main-nav" aria-label="Sections">
+    <a href="/index.html">Overview</a>
+    <a href="/population.html">Population</a>
+    <a class="active" href="/economy.html" aria-current="page">Economy</a>
+    <a href="/labour.html">Labour</a>
+    <a href="/prices.html">Prices</a>
+    <a href="/regions.html">Regions</a>
+    <a href="/methodology.html">Sources &amp; method</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <h1>Economy</h1>
+    <p class="lede">Japan is the world's fourth-largest economy. Nominal GDP reached ¥609.3 trillion in 2024 (about $4.0 trillion), after the economy returned to growth in 2023 following the pandemic contraction.</p>
+  </div>
+
+  <section class="grid kpi" aria-label="Economic headline figures">
+    <div class="card kpi-card">
+      <div class="value">¥609.3 <small>trillion</small></div>
+      <div class="label">Nominal GDP, 2024</div>
+      <div class="delta up">+2.8% on 2023</div>
+      <div class="src">Cabinet Office, National Accounts</div>
+    </div>
+    <div class="card kpi-card">
+      <div class="value">1.0 <small>%</small></div>
+      <div class="label">Real GDP growth, 2025</div>
+      <div class="delta up">Recovery from −0.1% in 2024</div>
+      <div class="src">Cabinet Office, National Accounts</div>
+    </div>
+    <div class="card kpi-card">
+      <div class="value">¥107.9 <small>trillion</small></div>
+      <div class="label">Exports, 2024</div>
+      <div class="delta up">+6.9% on 2023</div>
+      <div class="src">Ministry of Finance, Trade Statistics</div>
+    </div>
+    <div class="card kpi-card">
+      <div class="value">¥4.7 <small>trillion</small></div>
+      <div class="label">Trade deficit, 2024</div>
+      <div class="delta up">Narrowed from ¥9.3tn in 2023</div>
+      <div class="src">Ministry of Finance, Trade Statistics</div>
+    </div>
+  </section>
+
+  <section data-tabs style="margin-top: 16px;">
+    <div class="controls">
+      <div class="tabs" role="group" aria-label="Economy views">
+        <button type="button" data-panel="gdp" aria-pressed="true">GDP &amp; growth</button>
+        <button type="button" data-panel="shares" aria-pressed="false">What makes up GDP</button>
+        <button type="button" data-panel="trade" aria-pressed="false">Trade &amp; partners</button>
+      </div>
+    </div>
+
+    <div class="card" data-panel-body="gdp">
+      <h2>Nominal GDP and real growth, 2019–2025</h2>
+      <p class="sub">Nominal GDP, ¥ trillion (bars); real GDP growth, % (line). Source: Cabinet Office, National Accounts. 2025 is the latest estimate.</p>
+      <canvas id="gdp-chart" class="chart" aria-label="Bar chart of Japan's nominal GDP with a line for real growth, 2019 to 2025"></canvas>
+      <p class="source-note">The pandemic cut real GDP by 4.1% in 2020. Nominal GDP passed ¥600 trillion for the first time in 2024, helped by price rises as much as by volume growth.</p>
+    </div>
+
+    <div class="card" data-panel-body="shares" hidden>
+      <h2>What makes up GDP, 2024</h2>
+      <p class="sub">Share of nominal GDP by expenditure component, %. Source: Cabinet Office, National Accounts 2024.</p>
+      <canvas id="shares-chart" class="chart short" aria-label="Horizontal bar chart of GDP by expenditure component, 2024"></canvas>
+      <p class="source-note">Household consumption is just over half of the economy. Net exports subtract from GDP because Japan has run a goods trade deficit since 2021, driven by energy import costs.</p>
+    </div>
+
+    <div class="card" data-panel-body="trade" hidden>
+      <h2>Trade: exports and imports, 2019–2025</h2>
+      <p class="sub">¥ trillion. Source: Ministry of Finance, Trade Statistics of Japan.</p>
+      <canvas id="trade-chart" class="chart" aria-label="Line chart of Japan's exports and imports, 2019 to 2025"></canvas>
+      <h3 style="margin-top: 18px;">Where exports go, 2024</h3>
+      <p class="sub">Share of total exports, %. Source: Ministry of Finance, Trade Statistics 2024.</p>
+      <canvas id="partners-chart" class="chart short" aria-label="Horizontal bar chart of Japan's export destinations, 2024"></canvas>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top: 16px;">
+    <h2>Reading the economy</h2>
+    <p>Three things shape Japan's economy today. First, consumption is the engine but it is soft: real wages only began to rise again in 2024 after two years of falling behind prices. Second, the yen's weakness since 2022 has lifted exporters' profits and the nominal value of exports, while making energy imports expensive. Third, public debt is about 250% of GDP — the highest among advanced economies — so fiscal space is limited even as defence and child-care spending rise. The <a href="/prices.html">Prices</a> page shows how inflation has changed the picture since 2022.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="/index.html">Overview</a><a href="/population.html">Population</a><a href="/economy.html">Economy</a>
+      <a href="/labour.html">Labour</a><a href="/prices.html">Prices</a><a href="/regions.html">Regions</a>
+      <a href="/methodology.html">Sources &amp; method</a>
+    </nav>
+    <p>Nippon Stat Atlas — an independent atlas of Japan's national statistics. Figures are the latest published values as of November 2026; each chart names its source and year. © <span id="footer-year">2026</span> Nippon Stat Atlas.</p>
+  </div>
+</footer>
+
+<script type="module" src="/app.js"></script>
+<script type="module">
+import { YEARS, SERIES, GDP_SHARES, EXPORT_PARTNERS } from './data.js';
+import { drawLineChart, drawBarChart, drawHBarChart, CHART_COLORS } from './charts.js';
+const { BLUE, ACCENT, TEAL, PALETTE } = CHART_COLORS;
+function drawGdp() {
+  drawBarChart(document.querySelector('#gdp-chart'), YEARS.map((y, i) => ({
+    label: String(y), value: SERIES.gdp.values[i], color: BLUE,
+  })), { unit: '¥ trillion' });
+}
+function drawShares() {
+  drawHBarChart(document.querySelector('#shares-chart'), GDP_SHARES.map((d, i) => ({
+    label: d.component, value: d.share, color: PALETTE[i % PALETTE.length],
+  })), { suffix: '%' });
+}
+function drawTrade() {
+  drawLineChart(document.querySelector('#trade-chart'), YEARS, [
+    { label: 'Exports', values: SERIES.exports.values, color: BLUE },
+    { label: 'Imports', values: SERIES.imports.values, color: ACCENT },
+  ], { unit: '¥ trillion' });
+  drawHBarChart(document.querySelector('#partners-chart'), EXPORT_PARTNERS.map((d, i) => ({
+    label: d.partner, value: d.share, color: i === 0 ? BLUE : i === 1 ? ACCENT : TEAL,
+  })), { suffix: '%' });
+}
+drawGdp();
+drawShares();
+drawTrade();
+document.querySelector('[data-panel-body="shares"]').addEventListener('panel-shown', drawShares);
+document.querySelector('[data-panel-body="trade"]').addEventListener('panel-shown', drawTrade);
+window.addEventListener('resize', () => { drawGdp(); drawShares(); drawTrade(); });
+</script>
+</body>
+</html>

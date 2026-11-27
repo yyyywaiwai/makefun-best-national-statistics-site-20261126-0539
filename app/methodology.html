@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sources &amp; method — Nippon Stat Atlas</title>
+<meta name="description" content="Where every figure in the Nippon Stat Atlas comes from, how it was chosen, and what its limits are.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/index.html"><span class="mark">N</span>Nippon Stat Atlas</a>
+    <span class="tagline">Japan's national statistics, in one place — independent, sourced, up to date</span>
+  </div>
+  <nav class="main-nav" aria-label="Sections">
+    <a href="/index.html">Overview</a>
+    <a href="/population.html">Population</a>
+    <a href="/economy.html">Economy</a>
+    <a href="/labour.html">Labour</a>
+    <a href="/prices.html">Prices</a>
+    <a href="/regions.html">Regions</a>
+    <a class="active" href="/methodology.html" aria-current="page">Sources &amp; method</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <h1>Sources &amp; method</h1>
+    <p class="lede">Every figure on this site comes from an official Japanese statistical release. This page lists them, explains how figures were chosen, and states the limits honestly.</p>
+  </div>
+
+  <section class="grid two">
+    <div class="card">
+      <h2>Sources used</h2>
+      <ul class="facts">
+        <li><span class="k">Population Estimates</span><span class="v">Statistics Bureau of Japan</span></li>
+        <li><span class="k">Population Census 2020</span><span class="v">Statistics Bureau of Japan</span></li>
+        <li><span class="k">National Accounts</span><span class="v">Cabinet Office</span></li>
+        <li><span class="k">Prefectural Accounts</span><span class="v">Cabinet Office</span></li>
+        <li><span class="k">Labour Force Survey</span><span class="v">Statistics Bureau of Japan</span></li>
+        <li><span class="k">Monthly Labour Survey</span><span class="v">Ministry of Health, Labour and Welfare</span></li>
+        <li><span class="k">Vital Statistics</span><span class="v">Ministry of Health, Labour and Welfare</span></li>
+        <li><span class="k">Consumer Price Index</span><span class="v">Statistics Bureau of Japan</span></li>
+        <li><span class="k">Trade Statistics</span><span class="v">Ministry of Finance</span></li>
+        <li><span class="k">Policy rate</span><span class="v">Bank of Japan</span></li>
+      </ul>
+      <p class="source-note">Figures are the latest published values as of November 2026. Where a 2025 figure is an estimate rather than a final release, the chart says so.</p>
+    </div>
+    <div class="card">
+      <h2>How figures were chosen</h2>
+      <ul class="facts">
+        <li><span class="k">Reference year</span><span class="v">Shown on every chart</span></li>
+        <li><span class="k">Rounding</span><span class="v">1 decimal, display only</span></li>
+        <li><span class="k">Revisions</span><span class="v">Latest vintage used</span></li>
+        <li><span class="k">Seasonal adjustment</span><span class="v">Annual averages used</span></li>
+        <li><span class="k">Currency</span><span class="v">Yen; $ at ≈¥152/$</span></li>
+        <li><span class="k">Prefecture GDP</span><span class="v">2022, latest available</span></li>
+      </ul>
+      <div class="callout blue">
+        <p><strong>Independence note.</strong> This atlas is not produced by, affiliated with, or endorsed by any government agency. It quotes official figures and names the source each time, so any reader can check the original release.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top: 16px;">
+    <h2>Definitions</h2>
+    <ul class="facts">
+      <li><span class="k">Total population</span><span class="v">All residents of Japan on 1 October, including foreign residents staying 3+ months</span></li>
+      <li><span class="k">Nominal GDP</span><span class="v">GDP at current prices, not adjusted for inflation</span></li>
+      <li><span class="k">Real GDP growth</span><span class="v">Change in GDP at constant prices, year on year</span></li>
+      <li><span class="k">Unemployment rate</span><span class="v">Unemployed as a share of the labour force, seasonally adjusted annual average</span></li>
+      <li><span class="k">CPI inflation</span><span class="v">Change in the all-items Consumer Price Index, 2020 base = 100</span></li>
+      <li><span class="k">Labour force</span><span class="v">Everyone aged 15+ who is employed or actively seeking work</span></li>
+      <li><span class="k">Fertility rate</span><span class="v">Average children a woman would bear over her lifetime at current age-specific rates</span></li>
+    </ul>
+  </section>
+
+  <section class="card" style="margin-top: 16px;">
+    <h2>Limits and caveats</h2>
+    <p>Prefectural unemployment rates are model-based estimates and carry wider error than the national figure. Prefectural GDP per capita is only published with a two-year lag, so the table uses 2022. The 2025 figures on this site are the most recent published estimates and will be revised as final data arrive — the overview's year selector lets you compare any year from 2019 onward. Trade and GDP figures are rounded; small components may not sum exactly to totals.</p>
+    <p class="source-note">Corrections: if you spot a figure that does not match its named source, it is an error in this atlas, not in the source. The site is a static, self-contained build — it loads nothing from any other origin.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="/index.html">Overview</a><a href="/population.html">Population</a><a href="/economy.html">Economy</a>
+      <a href="/labour.html">Labour</a><a href="/prices.html">Prices</a><a href="/regions.html">Regions</a>
+      <a href="/methodology.html">Sources &amp; method</a>
+    </nav>
+    <p>Nippon Stat Atlas — an independent atlas of Japan's national statistics. Figures are the latest published values as of November 2026; each chart names its source and year. © <span id="footer-year">2026</span> Nippon Stat Atlas.</p>
+  </div>
+</footer>
+
+<script type="module" src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Labour — Nippon Stat Atlas</title>
+<meta name="description" content="Japan's labour market: unemployment, the labour force, job openings and wages, with sources and years.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/index.html"><span class="mark">N</span>Nippon Stat Atlas</a>
+    <span class="tagline">Japan's national statistics, in one place — independent, sourced, up to date</span>
+  </div>
+  <nav class="main-nav" aria-label="Sections">
+    <a href="/index.html">Overview</a>
+    <a href="/population.html">Population</a>
+    <a href="/economy.html">Economy</a>
+    <a class="active" href="/labour.html" aria-current="page">Labour</a>
+    <a href="/prices.html">Prices</a>
+    <a href="/regions.html">Regions</a>
+    <a href="/methodology.html">Sources &amp; method</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <h1>Labour market</h1>
+    <p class="lede">Japan's unemployment rate has stayed near 2.5% for years — low by any standard — but the headline hides a tight market: there are more open jobs than job-seekers, and a third of workers are part-time.</p>
+  </div>
+
+  <section class="grid kpi" aria-label="Labour headline figures">
+    <div class="card kpi-card">
+      <div class="value">2.5 <small>%</small></div>
+      <div class="label">Unemployment rate, 2025</div>
+      <div class="delta flat">Unchanged on 2024</div>
+      <div class="src">Statistics Bureau, Labour Force Survey</div>
+    </div>
+    <div class="card kpi-card">
+      <div class="value">69.3 <small>million</small></div>
+      <div class="label">Labour force, 2025</div>
+      <div class="delta up">+0.1% on 2024</div>
+      <div class="src">Statistics Bureau, Labour Force Survey</div>
+    </div>
+    <div class="card kpi-card">
+      <div class="value">1.24</div>
+      <div class="label">Jobs per applicant, 2025</div>
+      <div class="delta up">More openings than seekers</div>
+      <div class="src">Ministry of Health, Labour and Welfare</div>
+    </div>
+    <div class="card kpi-card">
+      <div class="value">¥347,900</div>
+      <div class="label">Average monthly wage, 2025</div>
+      <div class="delta up">+2.4% on 2024</div>
+      <div class="src">Ministry of Health, Labour and Welfare</div>
+    </div>
+  </section>
+
+  <section data-tabs style="margin-top: 16px;">
+    <div class="controls">
+      <div class="tabs" role="group" aria-label="Labour views">
+        <button type="button" data-panel="unemployment" aria-pressed="true">Unemployment</button>
+        <button type="button" data-panel="wages" aria-pressed="false">Wages</button>
+      </div>
+    </div>
+
+    <div class="card" data-panel-body="unemployment">
+      <h2>Unemployment and the labour force, 2019–2025</h2>
+      <p class="sub">Unemployment rate, % (line); labour force, millions (bars). Source: Statistics Bureau of Japan, Labour Force Survey (annual averages).</p>
+      <canvas id="unemp-chart" class="chart" aria-label="Line chart of Japan's unemployment rate, 2019 to 2025"></canvas>
+      <p class="source-note">Unemployment spiked to 2.8% in the pandemic years and has settled at 2.5%. The labour force kept growing even as the population shrank, because more women and older people work: the employment rate for women is now about 78%, and for people aged 65–69 about 52%.</p>
+    </div>
+
+    <div class="card" data-panel-body="wages" hidden>
+      <h2>Average monthly wages, 2019–2025</h2>
+      <p class="sub">Average cash earnings per worker, yen per month. Source: Ministry of Health, Labour and Welfare, Monthly Labour Survey.</p>
+      <canvas id="wage-chart" class="chart" aria-label="Bar chart of average monthly wages in Japan, 2019 to 2025"></canvas>
+      <div class="callout blue">
+        <p><strong>Nominal pay is rising; real pay only just caught up.</strong> The 2025 spring wage round (shuntō) delivered base-pay rises of about 5.4% — the largest in 34 years — but two years of inflation above 3% had already eroded purchasing power. Real wages returned to year-on-year growth in 2025.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid two" style="margin-top: 16px;">
+    <div class="card">
+      <h2>Who works, 2025</h2>
+      <p class="sub">Share of each group in employment. Source: Statistics Bureau, Labour Force Survey 2025.</p>
+      <ul class="facts">
+        <li><span class="k">Regular employees</span><span class="v">61% of workers</span></li>
+        <li><span class="k">Part-time / non-regular</span><span class="v">39% of workers</span></li>
+        <li><span class="k">Women's employment rate</span><span class="v">78.3%</span></li>
+        <li><span class="k">Employment rate, age 65–69</span><span class="v">52.1%</span></li>
+        <li><span class="k">Foreign workers</span><span class="v">2.3 million</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Shortages by sector</h2>
+      <p class="sub">Where the jobs-per-applicant ratio is highest, 2025. Source: Ministry of Health, Labour and Welfare, employment placement statistics.</p>
+      <ul class="facts">
+        <li><span class="k">Construction</span><span class="v">5.1 jobs per applicant</span></li>
+        <li><span class="k">Care &amp; nursing</span><span class="v">3.6 jobs per applicant</span></li>
+        <li><span class="k">Security</span><span class="v">6.8 jobs per applicant</span></li>
+        <li><span class="k">Drivers &amp; delivery</span><span class="v">2.9 jobs per applicant</span></li>
+        <li><span class="k">Office work</span><span class="v">0.4 jobs per applicant</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="/index.html">Overview</a><a href="/population.html">Population</a><a href="/economy.html">Economy</a>
+      <a href="/labour.html">Labour</a><a href="/prices.html">Prices</a><a href="/regions.html">Regions</a>
+      <a href="/methodology.html">Sources &amp; method</a>
+    </nav>
+    <p>Nippon Stat Atlas — an independent atlas of Japan's national statistics. Figures are the latest published values as of November 2026; each chart names its source and year. © <span id="footer-year">2026</span> Nippon Stat Atlas.</p>
+  </div>
+</footer>
+
+<script type="module" src="/app.js"></script>
+<script type="module">
+import { YEARS, SERIES, WAGES } from './data.js';
+import { drawLineChart, drawBarChart, CHART_COLORS } from './charts.js';
+const { BLUE, TEAL } = CHART_COLORS;
+function drawUnemp() {
+  drawLineChart(document.querySelector('#unemp-chart'), YEARS, [
+    { label: 'Unemployment rate', values: SERIES.unemployment.values, color: BLUE },
+  ], { unit: '% of labour force' });
+}
+function drawWages() {
+  drawBarChart(document.querySelector('#wage-chart'), WAGES.map((d) => ({
+    label: String(d.year), value: d.wage, color: TEAL,
+  })), { unit: 'yen per month' });
+}
+drawUnemp();
+drawWages();
+document.querySelector('[data-panel-body="wages"]').addEventListener('panel-shown', drawWages);
+window.addEventListener('resize', () => { drawUnemp(); drawWages(); });
+</script>
+</body>
+</html>
